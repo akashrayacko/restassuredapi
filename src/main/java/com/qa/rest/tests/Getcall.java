@@ -27,9 +27,24 @@ public class Getcall {
 
                         body("MRData.CircuitTable.Circuits.circuitId",hasSize(20));
 
-                       // and().
+                        and().
 
-                       // header("content-length", equalTo("4551"));
+                        header("content-length", equalTo("4552"));
+
+
+    }
+    
+    @Test
+    public void test_add_Post() {
+
+        JSONObject obj= new JSONObject();
+        obj.put("name","Akash");
+        obj.put("job","SDET");
+        baseURI="https://reqres.in/api";
+
+        given().body(obj.toString()).
+                when().
+                post("/users");
 
 
     }
